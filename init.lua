@@ -974,3 +974,12 @@ require('lazy').setup({
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
+-- Remap 'i' to 'k' (up), 'j' to 'h' (left), 'k' to 'j' (down), and 'l' to 'l' (right) in normal mode
+vim.api.nvim_set_keymap('n', 'i', 'k', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', 'j', 'h', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', 'k', 'j', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', 'l', 'l', { noremap = true, silent = true })
+
+-- Ensure 'I' still enters insert mode at the beginning of the line
+vim.api.nvim_set_keymap('n', 'I', 'i', { noremap = true, silent = true })
+--
