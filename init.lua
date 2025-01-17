@@ -950,6 +950,18 @@ require('lazy').setup({
   -- Or use telescope!
   -- In normal mode type `<space>sh` then write `lazy.nvim-plugin`
   -- you can continue same window with `<space>sr` which resumes last telescope search
+
+  -- VimTeX
+  {
+    "lervag/vimtex",
+    lazy = false,     -- we don't want to lazy load VimTeX
+    -- tag = "v2.15", -- uncomment to pin to a specific release
+    init = function()
+      -- VimTeX configuration goes here, e.g.
+      vim.g.vimtex_view_method = "zathura"
+    end
+  }
+
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the
@@ -982,4 +994,4 @@ vim.api.nvim_set_keymap('n', 'l', 'l', { noremap = true, silent = true })
 
 -- Ensure 'I' still enters insert mode at the beginning of the line
 vim.api.nvim_set_keymap('n', 'I', 'i', { noremap = true, silent = true })
---
+
